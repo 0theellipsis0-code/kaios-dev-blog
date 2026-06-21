@@ -1,4 +1,13 @@
-+++ title = "JScalated: From the browser to ADB on KaiOS 3.1" description = "A detailed guide to authorizing ADB on your KaiOS 3.1 phone" date = 2026-06-20T10:00:00+10:00 lastmod = 2026-06-21T02:30:00-05:00 toc = true draft = false header_img = "img/JScalated-Enable-Dev.jpg" tags = ["KaiOS", "Security", "KaiOS 3.1", "ADB"] categories = [] series = ["Advanced Development"] [params] featured_img = "img/JScalated-Enable-Dev.jpg" +++
++++
+title = "JScalated: From the browser to ADB on KaiOS 3.1" 
+description = "A detailed guide to authorizing ADB on your KaiOS 3.1 phone" date = 2026-06-20T10:00:00+10:00 
+lastmod = 2026-06-21T02:30:00-05:00 
+toc = true 
+draft = false 
+header_img = "img/JScalated-Enable-Dev.jpg" tags = ["Guide", "Security", "KaiOS 3.1", "ADB"] 
+categories = [] 
+series = ["Advanced Development"] featured_img = "img/JScalated-Enable-Dev.jpg"
++++
 
 JScalated exploits a Mozilla web development feature left enabled by the authors of KaiOS. It allows custom Javascript execution in the context of any currently displayed webpage. For most operating systems, this would not give the user a significant amount of extra control over their device, but KaiOS features a well-known rooted Engmode API. 
 
@@ -7,7 +16,7 @@ The Engmode API allows webapps to talk to the underlying Android operating syste
 {if
 (Object.keys(this.allowedPropsList)
 .includes(propskey)){var command=
-"setprop"+this.allowedPropsList[propskey]+"
+"setprop "+this.allowedPropsList[propskey]+"
 "+value;if(DEBUG)
 {debug("setPropertyLE: command = "+command);
 }
@@ -85,7 +94,7 @@ Init makes use of a lot of properties that are accessible to B2G but injecting i
 
 
 **Coming Soon...**
-As of the day of authorship, it has been discovered that the firefox-debugger socket is indeed accessible on KaiOS 3.1 phones.  This discovery has effectivly made the KaiOS 3.1 development landscape nearly identical to that of KaiOS 2.5, However root access is yet to be universally achieved.  The feature will be added to the tool soon as a one-click button, but the overall proccess is described below:
+As of the day of authorship, it has been discovered that the firefox-debugger socket is indeed accessible on KaiOS 3.1 phones.  This discovery has effectively made the KaiOS 3.1 development landscape nearly identical to that of KaiOS 2.5, However root access is yet to be universally achieved.  The feature will be added to the tool soon as a one-click button, but the overall process is described below:
 Place a user.js file in: `/data/b2g/mozilla/<Profile>.default/user.js`
 The contents could be something like:
 ```js
